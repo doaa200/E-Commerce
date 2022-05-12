@@ -1,0 +1,27 @@
+
+      <div class="container" >
+         <div class="row">
+           <ng-container *ngFor="let produ of ProductListOfCategory">
+           <div class="cart col md-3" class="shadow p-3 mb-5 bg-body rounded">
+            <img (click)="Toast(produ)" src="https://localhost:44386/Resources/Images/{{produ.image}}">
+
+             <h5 class="itemdata">{{produ.name}}</h5>
+             <p><strong>Quantity : </strong>{{produ.quantity}}</p>
+             <p> <strong>Price : </strong>{{produ.price|currency}}</p>
+             <input  #itemcount style="width: 100px; margin-bottom: 8px;" type="number">
+             <br>
+             <button (click)="AddToCart(produ,itemcount)"><img src="assets/cart.jpg" style="width:100px;height: 40px;"></button>
+           </div>
+
+          </ng-container>
+         </div>
+      </div>
+
+
+
+
+
+
+
+
+

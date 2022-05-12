@@ -1,0 +1,39 @@
+<ng-container *ngIf="products.length!=0" >
+  <div class="container">
+    <div class="card-table">
+      <div class="card-product">
+        <div class="row">
+        
+        <div class="card" style="width: 18rem;" *ngFor="let item of products, let i=index">
+          <img src="https://localhost:44386/Resources/Images/{{item.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">Price:{{item.price}}</p>
+            <p class="card-text"> Quantity:{{item.quantity}}</p>
+            
+               
+               <button type="button" class="btn btn-danger"(click)="Remove(item)" style="margin-right:3px ;">Remove</button>
+               <button type="button" class="btn btn-success" routerLink="/Product/Products">Add Product</button>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</ng-container>
+
+
+<ng-container *ngIf="products.length==0">
+<div class="container">
+
+<div class="card">
+<h4 class="card-title">Shopping Card</h4>
+</div>
+<div class="center">
+  
+   <img src="assets/cart.jpg" routerLink="/Product/Products" style="margin-right: 220px;"></div>
+
+</div>
+</ng-container>
